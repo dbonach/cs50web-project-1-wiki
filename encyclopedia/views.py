@@ -20,10 +20,10 @@ def wiki(request, entry):
     # print(entry + "- wiki")
     if (content == None):
         return render(request, "encyclopedia/notfound.html", {
-            "entry": entry + " - wiki"
+            "entry": entry + " - Wiki"
         })
     # print(markdown2.markdown(text))
     return render(request, "encyclopedia/wiki.html", {
-        "entry": entry + " - wiki",
+        "entry": entry + " - Wiki",
         "content": markdown2.markdown(content)
     })
