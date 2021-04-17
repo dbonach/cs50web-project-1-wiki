@@ -15,7 +15,7 @@ def wiki(request, entry):
     # print("###", end=" ")
     # print(request.path)
     # entry = re.sub("/wiki/", "", request.path)
-    # print(entry)
+    print(entry)
     content = util.get_entry(entry)
     # print(entry + "- wiki")
     if (content == None):
