@@ -1,11 +1,12 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    {{ entry }}
+    {{ title }}
 {% endblock %}
 
 {% block body %}
 
-    <p>Wiki does not have an article with this exact name.</p>
+    <!-- <p>Wiki does not have an article with this exact name.</p> -->
+    <p><em>The page "{{ query }}" does not exist. You can ask for it to be created.</em></p>
 
 {% endblock %}
