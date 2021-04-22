@@ -4,6 +4,7 @@ import markdown2
 from django.http import HttpResponse
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+import random
 
 from . import util
 
@@ -115,3 +116,8 @@ def edit(request, entry):
         "content": content,
         "query": entry
     })
+
+def randomPage(request):
+    items = util.list_entries()
+    entry = random.choice(items)
+    return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': entry}))
