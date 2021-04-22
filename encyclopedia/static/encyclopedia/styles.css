@@ -40,3 +40,24 @@ textarea {
 .search-result {
     font-weight: lighter;
 }
+
+.new-title {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica;
+    color: #404040;
+}
+
+.title-input {
+    display: flex;
+    align-items: center;
+}
+
+textarea {
+    width: 80%;
+    height: 70vh;
+}
+
+.submit-bt {
+    display: block;
+    padding-left: 4px;
+}
