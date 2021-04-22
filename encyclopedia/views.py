@@ -54,9 +54,11 @@ def wiki(request, entry):
 
     # Else, render the page with its entry content
     else:
+        print(entry)
         return render(request, "encyclopedia/wiki.html", {
             "title": entry + " - Wiki",
-            "content": markdown2.markdown(content)
+            "content": markdown2.markdown(content),
+            "query": entry
     })
 
 def notFound(request, entry):
@@ -99,4 +101,17 @@ def newPage(request):
         return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': title}))
 
     else:
+        print(vars(request))
         return render(request, "encyclopedia/newpage.html")
+
+def edit(request, entry):
+    if(request.method == "POST"):
+        content = request.POST["new-entry"]
+        util.save_entry(entry, content)
+        return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': entry}))
+
+    content = util.get_entry(entry)
+    return render(request, "encyclopedia/edit.html", {
+        "content": content,
+        "query": entry
+    })
