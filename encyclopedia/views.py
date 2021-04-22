@@ -86,16 +86,17 @@ def notFound(request, entry):
 
 def newPage(request):
     if(request.method == "POST"):
-        title = request.POST["title"]
-
         # Get all saved entries
         items = util.list_entries()
 
+        title = request.POST["title"]
+
         if(title in items):
             return HttpResponse("The page already exists.")
-        # title = request.POST["title"]
+            
         content = request.POST["new-entry"]
         util.save_entry(title, content)
         return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': title}))
+
     else:
         return render(request, "encyclopedia/newpage.html")
