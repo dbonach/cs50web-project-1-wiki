@@ -27,6 +27,10 @@ textarea {
     line-height: 15px;
 }
 
+.search:focus {
+    /* outline-color: cornflowerblue */
+}
+
 .sidebar {
     background-color: #f0f0f0;
     height: 100vh;
@@ -60,4 +64,27 @@ textarea {
 .submit-bt {
     display: block;
     padding-left: 4px;
+}
+
+.logo {
+    background-image: url(../images/Wikipedia_logo_v2_\(black\).svg.png);
+    background-size: 210px 200px;
+    height: 200px;
+    width: 100%;
+    max-width: 210px;
+}
+
+.sidebar a {
+    /* color: #0645ad; */
+    color: #222;
+}
+
+.sidebar h2 {
+    font-family: 'Original Surfer', cursive;
+    padding-left: 65px;
+}
+
+.sidebar {
+    background-image: linear-gradient(#672, #feb);
+    border-right: 2px solid black;
 }
