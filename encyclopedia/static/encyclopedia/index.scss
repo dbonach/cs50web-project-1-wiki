@@ -47,6 +47,11 @@ textarea {
   background-image: linear-gradient(#672, #feb);
   border-right: 2px solid black;
   padding: 10px;
+  
+  button {
+    all: unset;
+    // cursor: pointer;
+  }
 
   h2 {
     margin-top: 5px;
@@ -78,6 +83,10 @@ textarea {
     font-size: 15px;
     line-height: 15px;
   }
+}
+
+.guide {
+  display: none;
 }
 
 .search-result {
@@ -125,16 +134,35 @@ textarea {
 }
 
 @media screen and (max-width: 600px) {
+
+  .title-input {
+    display: block;
+
+    input {
+      margin: 0;
+    }
+  }
+
+  textarea {
+    height: 60vh;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
   .main {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
+    height: max;
     position: relative;
     
     > a {
       // position: relative;
-      // margin-bottom: 2rem;
+      margin-top: 2rem;
       position: absolute;
-      bottom: 1rem;
+      // bottom: 1rem;
+      bottom: unset;
     }
   }
 
@@ -146,6 +174,8 @@ textarea {
       height: max-content;
       // border-bottom: 2px solid black;
       box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 20%);
+      // overflow: hidden;
+      // height: calc(2rem + 20px);
 
       .home {
         margin-top: 1rem;
@@ -154,6 +184,8 @@ textarea {
       h2 {
         padding: 0;
         text-align: center;
+        // line-height: 0.5rem;
+        margin-top: 0;
       }
 
       a {
@@ -173,6 +205,20 @@ textarea {
       input::placeholder {
         text-align: center;
       }
+  }
+
+  .guide {
+    position: absolute;
+    top: 18px;
+    left: 0.5rem;
+    display: inline;
+    width: 24px;
+    // float: left;
+  }
+
+  .hide-guide {
+    overflow: hidden;
+    height: calc(2rem + 20px);
   }
 
   .logo {
