@@ -10,10 +10,10 @@ New Page
 
 <form method="post">
     {% csrf_token %}
-    <div class="title-input">
-        <span class="new-title">Title:</span>
+    <p class="title-input">
+        <label class="new-title">Title:</label>
         <input type="text" name="title">
-    </div>
+    </p>
 
     <textarea name="new-entry"></textarea>
     <input class="submit-bt" type="submit" value="Save">
