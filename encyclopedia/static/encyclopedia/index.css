@@ -86,7 +86,6 @@ textarea {
 .title-input {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 .title-input input {
   outline: none;
@@ -94,8 +93,8 @@ textarea {
 }
 
 .submit-bt {
-  display: block;
-  padding-left: 4px;
+  border: 1px solid black;
+  border-radius: 2px;
 }
 
 .logo {
@@ -119,13 +118,6 @@ textarea {
 }
 
 @media screen and (max-width: 600px) {
-  .title-input {
-    display: block;
-  }
-  .title-input input {
-    margin: 0;
-  }
-
   textarea {
     height: 60vh;
   }
