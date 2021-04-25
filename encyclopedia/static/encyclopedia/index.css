@@ -8,8 +8,9 @@ code {
 }
 
 textarea {
-  height: 79vh;
+  height: 70vh;
   width: 100%;
+  outline: none;
 }
 
 .main {
@@ -20,7 +21,7 @@ textarea {
   margin-top: 10px;
   color: #555;
   margin-bottom: 30px;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid #d9dcdf;
 }
 .main > a {
   position: absolute;
@@ -28,11 +29,8 @@ textarea {
   text-decoration: underline;
   color: #080;
 }
-
-.search {
-  width: 100%;
-  font-size: 15px;
-  line-height: 15px;
+.main li > a {
+  color: #007C55;
 }
 
 .sidebar {
@@ -61,6 +59,11 @@ textarea {
   font-family: "Original Surfer", cursive;
   padding-left: 65px;
 }
+.sidebar input {
+  width: 100%;
+  font-size: 15px;
+  line-height: 15px;
+}
 
 .search-result {
   font-weight: lighter;
@@ -75,6 +78,11 @@ textarea {
 .title-input {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
+}
+.title-input input {
+  outline: none;
+  margin-left: 0.5rem;
 }
 
 .submit-bt {
@@ -106,19 +114,22 @@ textarea {
   .main {
     width: 100%;
     height: 100vh;
+    position: relative;
   }
   .main > a {
     position: absolute;
-    bottom: -98vh;
+    bottom: 1rem;
   }
 
   .sidebar {
     width: 100%;
     border: none;
     text-align: center;
+    height: max-content;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
   }
   .sidebar .home {
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
   .sidebar h2 {
     padding: 0;
@@ -126,15 +137,23 @@ textarea {
   }
   .sidebar a {
     font-size: 2rem;
+    color: #333;
   }
   .sidebar a:hover {
     animation-name: none;
     text-decoration: none;
   }
+  .sidebar input {
+    width: 80%;
+  }
+  .sidebar input::placeholder {
+    text-align: center;
+  }
 
   .logo {
     width: 210px;
     margin: auto;
+    height: 0;
   }
 }
 .home {
