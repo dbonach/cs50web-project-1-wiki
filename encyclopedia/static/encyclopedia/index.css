@@ -8,7 +8,7 @@ code {
 }
 
 textarea {
-  height: 70vh;
+  height: 80vh;
   width: 100%;
   outline: none;
 }
@@ -100,6 +100,10 @@ textarea {
   padding-left: 4px;
 }
 
+#content {
+  height: 70vh;
+}
+
 .submit-bt {
   border: 1px solid black;
   border-radius: 2px;
@@ -128,6 +132,10 @@ textarea {
 @media screen and (max-width: 600px) {
   textarea {
     height: 75vh;
+  }
+
+  #content {
+    height: 65vh;
   }
 
   li a:hover {
