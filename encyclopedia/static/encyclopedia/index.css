@@ -229,6 +229,11 @@ textarea {
     border: none;
     margin-top: 2vh;
   }
+
+  .submit-bt:focus {
+    outline: none;
+    background: #772;
+  }
 }
 .home {
   margin-top: 1rem;
