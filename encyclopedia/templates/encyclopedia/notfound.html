@@ -6,7 +6,7 @@
 
 {% block body %}
 {% if entries %}
-<h1 class='search-result'><b>{{ query }}</b> may refer to:</h1>
+<h1 class='search-result'><em>"{{ query }}"</em> may refer to:</h1>
 
 <ul>
     {% for entry in entries %}
@@ -17,7 +17,9 @@
 
 {% else %}
 <!-- <p>Wiki does not have an article with this exact name.</p> -->
-<h5>The page <em>"{{ query }}"</em> does not exist. You can ask for it to be created.</h5>
+<h5>The page <em>"{{ query }}"</em> does not exist.
+    You can <a href="{% url 'encyclo:newPageTitle' query %}">ask for it to be created.</a>
+</h5>
 <p>There were no results matching the query.</p>
 {% endif %}
 {% endblock %}

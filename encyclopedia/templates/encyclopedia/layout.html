@@ -36,17 +36,17 @@
                     Wiki
                 </a>
             </h2>
-            <form>
-                <input type="text" name="q" placeholder="Search Encyclopedia">
+            <form action="{% url 'encyclo:index' %}">
+                <input type="text" name="q" placeholder="Search Encyclopedia" required>
             </form>
             <div class='home'>
-                <a href="{% url 'encyclo:index' %}">Home</a>
+                <a class='shift' href="{% url 'encyclo:index' %}">Home</a>
             </div>
-            <div>
-                <a href="{% url 'encyclo:newpage' %}">Create New Page</a>
+            <div class='shift'>
+                <a class='shift' href="{% url 'encyclo:newpage' %}">Create New Page</a>
             </div>
-            <div>
-                <a href="{% url 'encyclo:randomPage' %}">Random Page</a>
+            <div class='shift'>
+                <a class='shift' href="{% url 'encyclo:randomPage' %}">Random Page</a>
             </div>
             {% block nav %}
             {% endblock %}

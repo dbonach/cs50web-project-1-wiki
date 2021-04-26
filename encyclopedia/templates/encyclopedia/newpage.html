@@ -11,13 +11,13 @@ New Page
 <form method="post">
     {% csrf_token %}
     <p class="title-input">
-        <label class="new-title">Title:</label>
-        <input type="text" name="title">
+        <label class="new-title" for="wefa">Title:</label>
+        <input type="text" name="title" id="wefa" {% if title %} value="{{title}}" {% endif %} required>
     </p>
-
-    <textarea name="new-entry"></textarea>
-    <!-- <input class="submit-bt" type="submit" value="Save"> -->
-    <button class="submit-bt">Save</button>
+    <label class="new-title">Text:</label>
+    <textarea name="new-entry" required></textarea>
+    <input class="submit-bt" type="submit" value="Save">
+    <!-- <button class="submit-bt">Save</button> -->
 </form>
 
 {% endblock %}

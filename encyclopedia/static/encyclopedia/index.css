@@ -22,6 +22,7 @@ textarea {
   color: #555;
   margin-bottom: 30px;
   border-bottom: 1px solid #d9dcdf;
+  font-size: 1.75rem;
 }
 .main > a {
   position: absolute;
@@ -58,6 +59,10 @@ textarea {
   animation-fill-mode: forwards;
   color: #000;
 }
+.sidebar h2 a:hover {
+  text-decoration: none;
+  animation: none;
+}
 .sidebar h2 {
   font-family: "Original Surfer", cursive;
   padding-left: 65px;
@@ -65,7 +70,6 @@ textarea {
 .sidebar input {
   width: 100%;
   font-size: 15px;
-  line-height: 15px;
 }
 
 .guide {
@@ -77,7 +81,7 @@ textarea {
 }
 
 .new-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: Arial, Helvetica;
   color: #404040;
   margin: 0;
@@ -86,10 +90,11 @@ textarea {
 .title-input {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .title-input input {
   outline: none;
-  margin-left: 0.5rem;
+  margin-left: 4px;
 }
 
 .submit-bt {
@@ -122,7 +127,7 @@ textarea {
     height: 60vh;
   }
 
-  a:hover {
+  li a:hover {
     text-decoration: none;
   }
 
@@ -136,6 +141,16 @@ textarea {
     position: absolute;
     bottom: unset;
   }
+  .main p a:hover {
+    text-decoration: none;
+  }
+  .main h1 {
+    font-size: 1.5rem;
+  }
+
+  .new-title {
+    font-size: 1rem;
+  }
 
   .sidebar {
     width: 100%;
@@ -143,25 +158,32 @@ textarea {
     text-align: center;
     height: max-content;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 0;
   }
   .sidebar .home {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   .sidebar h2 {
     padding: 0;
     text-align: center;
-    margin-top: 0;
+    margin-top: 6px;
   }
   .sidebar a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #333;
   }
   .sidebar a:hover {
-    animation-name: none;
+    animation: none;
     text-decoration: none;
   }
   .sidebar input {
     width: 80%;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
   }
   .sidebar input::placeholder {
     text-align: center;
@@ -184,6 +206,12 @@ textarea {
     width: 210px;
     margin: auto;
     height: 0;
+  }
+
+  .submit-bt {
+    background-color: #883;
+    color: white;
+    border: none;
   }
 }
 .home {

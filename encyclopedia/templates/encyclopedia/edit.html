@@ -10,7 +10,7 @@ Edit - {{ query }}
 
 <form method="post">
   {% csrf_token %}
-  <textarea name="new-entry">{{ content }}</textarea>
+  <textarea name="new-entry" required>{{ content }}</textarea>
   <input class="submit-bt" type="submit" value="Save">
 </form>
 
