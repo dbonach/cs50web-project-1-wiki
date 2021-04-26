@@ -108,9 +108,8 @@ def newPage(request, title=""):
         if(not re.search(r"\w", title) or not re.search(r"\w", content)):
             return HttpResponse("Invalid  parameter")
 
-        # util.save_entry(title, content)
-        # return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': title}))
-        return HttpResponse("Invalid  parameter2")
+        util.save_entry(title, content)
+        return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': title}))
 
     else:
         return render(request, "encyclopedia/newpage.html", {
@@ -121,6 +120,10 @@ def newPage(request, title=""):
 def edit(request, entry):
     if(request.method == "POST"):
         content = request.POST["new-entry"]
+        # Handle void input
+        if (not re.search(r"\w", content)):
+            return HttpResponse("Invalid paramenter")
+
         util.save_entry(entry, content)
         return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': entry}))
 

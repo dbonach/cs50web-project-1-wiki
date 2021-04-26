@@ -17,16 +17,18 @@ textarea {
   padding: 10px;
   width: calc(90% - 230px);
 }
+.main h1:first-child {
+  margin-top: 0.5rem;
+}
 .main h1 {
-  margin-top: 10px;
+  margin-top: 2.5rem;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 1.25rem;
   border-bottom: 1px solid #d9dcdf;
   font-size: 1.75rem;
 }
 .main > a {
-  position: absolute;
-  bottom: 1rem;
+  position: relative;
   text-decoration: underline;
   color: #080;
 }
@@ -35,7 +37,7 @@ textarea {
 }
 
 .sidebar {
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(#672, #feb);
   border-right: 2px solid black;
   padding: 10px;
@@ -95,6 +97,7 @@ textarea {
 .title-input input {
   outline: none;
   margin-left: 4px;
+  padding-left: 4px;
 }
 
 .submit-bt {
@@ -124,7 +127,7 @@ textarea {
 
 @media screen and (max-width: 600px) {
   textarea {
-    height: 60vh;
+    height: 75vh;
   }
 
   li a:hover {
@@ -138,7 +141,7 @@ textarea {
   }
   .main > a {
     margin-top: 2rem;
-    position: absolute;
+    position: relative;
     bottom: unset;
   }
   .main p a:hover {
@@ -146,6 +149,9 @@ textarea {
   }
   .main h1 {
     font-size: 1.5rem;
+  }
+  .main h5 {
+    font-size: 1rem;
   }
 
   .new-title {
@@ -157,6 +163,7 @@ textarea {
     border: none;
     text-align: center;
     height: max-content;
+    min-height: unset;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     padding: 0;
   }
@@ -212,6 +219,7 @@ textarea {
     background-color: #883;
     color: white;
     border: none;
+    margin-top: 2vh;
   }
 }
 .home {
