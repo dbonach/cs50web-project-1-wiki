@@ -79,7 +79,7 @@ textarea {
 
 .sidebar {
   min-height: 100vh;
-  background-image: linear-gradient(#672, #feb);
+  background-color: #13B03D;
   border-right: 2px solid black;
   padding: 10px;
 }
@@ -213,7 +213,9 @@ textarea {
     width: 100%;
     border: none;
     text-align: center;
-    height: max-content;
+    clear: both;
+    height: 3rem;
+    overflow: hidden;
     min-height: unset;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     padding: 0;
@@ -257,9 +259,36 @@ textarea {
 
   .hide-guide {
     overflow: hidden;
-    height: calc(2rem + 20px);
+    animation-name: close;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
   }
 
+  @keyframes close {
+    from {
+      height: 13rem;
+    }
+    to {
+      height: 3rem;
+    }
+  }
+  .show-guide {
+    overflow: hidden;
+    animation-name: open;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes open {
+    from {
+      height: 3rem;
+    }
+    to {
+      height: 13rem;
+    }
+  }
   .logo {
     width: 210px;
     margin: auto;
