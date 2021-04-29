@@ -1,5 +1,10 @@
-a:-webkit-any-link {
+// a:-webkit-any-link {
+//   text-decoration: none;
+// }
+a {
+  color: #007bff;
   text-decoration: none;
+  background-color: transparent;
 }
 
 a:hover {
