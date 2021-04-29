@@ -125,7 +125,9 @@ textarea {
     padding-left: 0.5rem;
   }
 }
-.row {
+.myRow {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
 }
 
