@@ -1,6 +1,27 @@
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+html {
+  font-family: sans-serif;
+}
+
 body {
   margin: 0;
   background-color: white;
+  line-height: 1.5;
 }
 
 code {
@@ -70,8 +91,8 @@ textarea {
   padding-left: 65px;
 }
 .sidebar input {
-  width: 100%;
   font-size: 15px;
+  line-height: 22.5px;
 }
 
 .guide {
