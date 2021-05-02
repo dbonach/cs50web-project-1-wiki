@@ -6,19 +6,17 @@ New Page
 
 {% block body %}
 
-<h1>Enter a new page bellow</h1>
-
+<h1>New page</h1>
 
 <form method="post">
     {% csrf_token %}
-    <div class="title-input">
-        <span class="new-title">Enter the title:</span>
-        <input type="text" name="title">
-    </div>
-
-    <textarea name="new-entry"></textarea>
+    <p class="title-input">
+        <label class="new-title" for="wefa">Title:</label>
+        <input type="text" name="title" id="wefa" {% if title %} value="{{title}}" {% endif %} required>
+    </p>
+    <label class="new-title">Text:</label>
+    <textarea name="new-entry" id="content" required></textarea>
     <input class="submit-bt" type="submit" value="Save">
 </form>
-
 
 {% endblock %}

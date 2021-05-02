@@ -1,24 +1,23 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    {{ title }}
+{{ title }}
 {% endblock %}
 
 {% block body %}
-    {% if entries %}
-    <h1 class='search-result'><b>{{ query }}</b> may refer to:</h1>
+{% if entries %}
+<h1 class='search-result'><em>"{{ query }}"</em> may refer to:</h1>
 
-    <ul>
-        {% for entry in entries %}
-            <!-- <li><a href="wiki/{{ entry }}/">{{ entry }}</a></li> -->
-            <li><a href="{% url 'encyclo:entry' entry %}">{{ entry }}</a></li>
-            <p>{{ teste }}</p>
-        {% endfor %}
-    </ul>
+<ul>
+    {% for entry in entries %}
+    <li><a href="{% url 'encyclo:entry' entry %}">{{ entry }}</a></li>
+    {% endfor %}
+</ul>
 
-    {% else %}
-    <!-- <p>Wiki does not have an article with this exact name.</p> -->
-    <h5>The page <em>"{{ query }}"</em> does not exist. You can ask for it to be created.</h5>
-    <p>There were no results matching the query.</p>
-    {% endif %}
+{% else %}
+<h5>The page <em>"{{ query }}"</em> does not exist.
+    You can <a href="{% url 'encyclo:newPageTitle' query %}">ask for it to be created.</a>
+</h5>
+<p>There were no results matching the query.</p>
+{% endif %}
 {% endblock %}

@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+}
+
+[type=submit] {
+  cursor: pointer;
+}
+
+button, textarea, input {
+  font-size: 1rem;
+  font-family: sans-serif, Arial, Helvetica;
+  line-height: 1.5rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  line-height: 1.5;
+}
+
+code {
+  white-space: pre;
+}
+
+textarea {
+  height: 80vh;
+  width: 100%;
+  outline: none;
+}
+
+.main {
+  padding: 10px;
+  width: calc(90% - 230px);
+}
+.main h1:first-child {
+  margin-top: 0.5rem;
+}
+.main h1 {
+  margin-top: 2.5rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #d9dcdf;
+  font-size: 1.75rem;
+}
+.main > a {
+  position: relative;
+  text-decoration: underline;
+  color: #080;
+}
+.main li > a {
+  color: #007C55;
+}
+
+.sidebar {
+  min-height: 100vh;
+  background-color: #13B03D;
+  border-right: 2px solid black;
+  padding: 10px;
+}
+.sidebar button {
+  all: unset;
+}
+.sidebar h2 {
+  margin-top: 5px;
+}
+.sidebar input:focus {
+  outline: 0;
+  box-shadow: inset 0 0 0 1px #ffb;
+}
+.sidebar a {
+  color: #222;
+}
+.sidebar a:hover {
+  animation-name: right-shift;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  color: #000;
+}
+.sidebar h2 a:hover {
+  text-decoration: none;
+  animation: none;
+}
+.sidebar h2 {
+  font-family: "Original Surfer", cursive;
+  padding-left: 65px;
+}
+.sidebar input {
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+.guide {
+  display: none;
+}
+
+.search-result {
+  font-weight: lighter;
+}
+
+.new-title {
+  font-size: 1.25rem;
+  font-family: Arial, Helvetica;
+  color: #404040;
+  margin: 0;
+}
+
+.title-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.title-input input {
+  outline: none;
+  margin-left: 4px;
+  padding-left: 4px;
+}
+
+#content {
+  height: 70vh;
+}
+
+.submit-bt {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.logo {
+  background-image: url("../images/Wikipedia_logo_v2_(black).svg.png");
+  background-size: 210px 200px;
+  height: 200px;
+  width: 100%;
+  max-width: 210px;
+}
+
+@keyframes right-shift {
+  from {
+    padding-left: 0;
+  }
+  to {
+    padding-left: 0.5rem;
+  }
+}
+.myRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  textarea {
+    height: 75vh;
+  }
+
+  #content {
+    height: 65vh;
+  }
+
+  li a:hover {
+    text-decoration: none;
+  }
+
+  .main {
+    width: 100%;
+    height: max;
+    position: relative;
+  }
+  .main > a {
+    margin-top: 2rem;
+    position: relative;
+    bottom: unset;
+  }
+  .main p a:hover {
+    text-decoration: none;
+  }
+  .main h1 {
+    font-size: 1.5rem;
+  }
+  .main h5 {
+    font-size: 1rem;
+  }
+
+  .new-title {
+    font-size: 1rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    border: none;
+    text-align: center;
+    clear: both;
+    height: 3rem;
+    overflow: hidden;
+    min-height: unset;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+  .sidebar .home {
+    margin-top: 0.5rem;
+  }
+  .sidebar h2 {
+    padding: 0;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .sidebar a {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  .sidebar a:hover {
+    animation: none;
+    text-decoration: none;
+  }
+  .sidebar input {
+    width: 80%;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+  }
+  .sidebar input::placeholder {
+    text-align: center;
+  }
+
+  .guide {
+    position: absolute;
+    top: 18px;
+    left: 0.5rem;
+    display: inline;
+    width: 24px;
+  }
+
+  .hide-guide {
+    overflow: hidden;
+    animation-name: close;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes close {
+    from {
+      height: 13rem;
+    }
+    to {
+      height: 3rem;
+    }
+  }
+  .show-guide {
+    overflow: hidden;
+    animation-name: open;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes open {
+    from {
+      height: 3rem;
+    }
+    to {
+      height: 13rem;
+    }
+  }
+  .logo {
+    width: 210px;
+    margin: auto;
+    height: 0;
+  }
+
+  .submit-bt {
+    background-color: #883;
+    color: white;
+    border: none;
+    margin-top: 2vh;
+  }
+
+  .submit-bt:focus {
+    outline: none;
+    background: #772;
+  }
+}
+.home {
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=index.css.map */

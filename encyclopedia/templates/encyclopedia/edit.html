@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Edit - {{ query }}
+{% endblock %}
+
+{% block body %}
+
+<h1>Edit ~<em>{{ query }}</em>~</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <textarea name="new-entry" required>{{ content }}</textarea>
+  <input class="submit-bt" type="submit" value="Save">
+</form>
+
+{% endblock %}

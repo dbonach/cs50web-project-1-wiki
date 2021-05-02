@@ -6,31 +6,53 @@
 
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'images/wikipedia_v2.ico' %}" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <!-- <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'encyclopedia/index.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <script defer src="{% static 'encyclopedia/guide-button.js' %}"></script>
 </head>
 
 <body>
-    <div class="row">
-        <div class="sidebar col-lg-2 col-md-3">
-            <h2>Wiki</h2>
-            <form>
-                <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+    <div class="myRow">
+        <div class="sidebar" id="guide-content">
+            <div class="guide">
+                <button id="guide-button">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"
+                        class="style-scope yt-icon"
+                        style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                        <g class="style-scope yt-icon">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" class="style-scope yt-icon"></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="logo"></div>
+            <h2>
+                <a href="{% url 'encyclo:index' %}">
+                    Wiki
+                </a>
+            </h2>
+            <form action="{% url 'encyclo:index' %}">
+                <input type="text" name="q" placeholder="Search Encyclopedia" required>
             </form>
-            <div>
-                <a href="{% url 'encyclo:index' %}">Home</a>
+            <div class='home'>
+                <a class='shift' href="{% url 'encyclo:index' %}">Home</a>
             </div>
-            <div>
-                <a href="{% url 'encyclo:newpage' %}">Create New Page</a>
+            <div class='shift'>
+                <a class='shift' href="{% url 'encyclo:newpage' %}">Create New Page</a>
             </div>
-            <div>
-                Random Page
+            <div class='shift'>
+                <a class='shift' href="{% url 'encyclo:randomPage' %}">Random Page</a>
             </div>
             {% block nav %}
             {% endblock %}
         </div>
-        <div class="main col-lg-10 col-md-9">
+        <div class="main">
             {% block body %}
             {% endblock %}
         </div>

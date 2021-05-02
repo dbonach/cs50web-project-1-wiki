@@ -27,6 +27,10 @@ textarea {
     line-height: 15px;
 }
 
+.search:focus {
+    /* outline-color: cornflowerblue */
+}
+
 .sidebar {
     background-color: #f0f0f0;
     height: 100vh;
@@ -35,6 +39,11 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+.sidebar input:focus {
+    outline: 0;
+    box-shadow: inset 0 0 0 1px #ffb;
 }
 
 .search-result {
@@ -60,4 +69,64 @@ textarea {
 .submit-bt {
     display: block;
     padding-left: 4px;
+}
+
+.logo {
+    background-image: url(../images/Wikipedia_logo_v2_\(black\).svg.png);
+    background-size: 210px 200px;
+    height: 200px;
+    width: 100%;
+    max-width: 210px;
+}
+
+.sidebar a {
+    /* color: #0645ad; */
+    color: #222;
+}
+
+.sidebar a:hover {
+    animation-name: right-shift;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    color: #000;
+}
+
+@keyframes right-shift {
+    from { padding-left: 0; }
+    to { padding-left: 0.5rem; }
+}
+
+.sidebar h2 {
+    font-family: 'Original Surfer', cursive;
+    padding-left: 65px;
+}
+
+.sidebar {
+    background-image: linear-gradient(#672, #feb);
+    border-right: 2px solid black;
+    padding: 10px;
+}
+
+.row {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .logo {
+        width: 210px;
+        margin: auto;
+    }
+
+    .sidebar h2 {
+        padding: 0;
+        text-align: center;
+    }
+}
+
+.home {
+    margin-top: 1rem;
 }

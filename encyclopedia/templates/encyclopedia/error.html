@@ -1,13 +1,9 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-{{ title }}
+Invalid parameter
 {% endblock %}
 
 {% block body %}
-
-{{ content|safe }}
-
-<a href="{% url 'encyclo:edit' query %}">Edit</a>
-
+<p>You used an invalid parameter in the form.</p>
 {% endblock %}

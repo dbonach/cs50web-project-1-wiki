@@ -4,6 +4,7 @@ import markdown2
 from django.http import HttpResponse
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+import random
 
 from . import util
 
@@ -18,7 +19,7 @@ def index(request):
     '''
     if(request.GET):
         query = request.GET['q']
-        if(query):
+        if(re.search(r"\w", query)):
             return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': query}))
         else:
             return HttpResponseRedirect(reverse("encyclo:index"))
@@ -36,10 +37,11 @@ def wiki(request, entry):
     When there's a non-empty query the request will be redirected to "entry"
     path with the query as "entry" argument, resulting in "wiki/query/".
     If there's an empty string in the query it'll be redirect to "entry"
-    path with entry as a parameter, resulting in a page reload.
+    path with entry as a parameter, resulting in a page reload.c
     '''
     if(request.GET):
         query = request.GET['q']
+
         if(query):
             return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': query}))
         else:
@@ -54,9 +56,11 @@ def wiki(request, entry):
 
     # Else, render the page with its entry content
     else:
+        print(entry)
         return render(request, "encyclopedia/wiki.html", {
             "title": entry + " - Wiki",
-            "content": markdown2.markdown(content)
+            "content": markdown2.markdown(content),
+            "query": entry
     })
 
 def notFound(request, entry):
@@ -84,19 +88,50 @@ def notFound(request, entry):
             "entries": entries
         })
 
-def newPage(request):
+def newPage(request, title=""):
+
     if(request.method == "POST"):
         # Get all saved entries
         items = util.list_entries()
 
-        title = request.POST["title"]
+        title = request.POST["title"].strip()
 
         if(title in items):
             return HttpResponse("The page already exists.")
             
         content = request.POST["new-entry"]
+
+        if(not re.search(r"\w", title) or not re.search(r"\w", content)):
+            return error(request)
+
         util.save_entry(title, content)
         return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': title}))
 
     else:
-        return render(request, "encyclopedia/newpage.html")
+        return render(request, "encyclopedia/newpage.html", {
+            "title": title 
+        })
+
+def edit(request, entry):
+    if(request.method == "POST"):
+        content = request.POST["new-entry"]
+        # Handle void input
+        if (not re.search(r"\w", content)):
+            return error(request)
+
+        util.save_entry(entry, content)
+        return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': entry}))
+
+    content = util.get_entry(entry)
+    return render(request, "encyclopedia/edit.html", {
+        "content": content,
+        "query": entry
+    })
+
+def randomPage(request):
+    items = util.list_entries()
+    entry = random.choice(items)
+    return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': entry}))
+
+def error(request):
+    return render(request, "encyclopedia/error.html")
