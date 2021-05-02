@@ -41,7 +41,7 @@ def wiki(request, entry):
     '''
     if(request.GET):
         query = request.GET['q']
-        #re.search(r"\w", query)
+
         if(query):
             return HttpResponseRedirect(reverse("encyclo:entry", kwargs={'entry': query}))
         else:
@@ -96,14 +96,10 @@ def newPage(request, title=""):
 
         title = request.POST["title"].strip()
 
-        print(title)
-
         if(title in items):
             return HttpResponse("The page already exists.")
             
         content = request.POST["new-entry"]
-
-        print(bool(title))
 
         if(not re.search(r"\w", title) or not re.search(r"\w", content)):
             return error(request)
@@ -114,7 +110,6 @@ def newPage(request, title=""):
     else:
         return render(request, "encyclopedia/newpage.html", {
             "title": title 
-            # statement if condition else statement
         })
 
 def edit(request, entry):

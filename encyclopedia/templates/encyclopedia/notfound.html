@@ -10,13 +10,11 @@
 
 <ul>
     {% for entry in entries %}
-    <!-- <li><a href="wiki/{{ entry }}/">{{ entry }}</a></li> -->
     <li><a href="{% url 'encyclo:entry' entry %}">{{ entry }}</a></li>
     {% endfor %}
 </ul>
 
 {% else %}
-<!-- <p>Wiki does not have an article with this exact name.</p> -->
 <h5>The page <em>"{{ query }}"</em> does not exist.
     You can <a href="{% url 'encyclo:newPageTitle' query %}">ask for it to be created.</a>
 </h5>
